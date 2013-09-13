@@ -152,9 +152,9 @@ class DbUnitRunner {
 
 	private org.dbunit.operation.DatabaseOperation getDbUnitDatabaseOperation(DbUnitTestContext testContext,
 			DatabaseOperation operation, DatabaseOperation lastOperation) {
-		if ((operation == DatabaseOperation.CLEAN_INSERT) && (lastOperation == DatabaseOperation.CLEAN_INSERT)) {
-			operation = DatabaseOperation.INSERT;
-		}
+		// if ((operation == DatabaseOperation.CLEAN_INSERT) && (lastOperation == DatabaseOperation.CLEAN_INSERT)) {
+		//	operation = DatabaseOperation.INSERT;
+		// }
 		org.dbunit.operation.DatabaseOperation databaseOperation = testContext.getDatbaseOperationLookup().get(
 				operation);
 		Assert.state(databaseOperation != null, "The databse operation " + operation + " is not supported");
